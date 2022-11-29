@@ -1,10 +1,11 @@
 //
-//  main.cpp
+//  TestCompiler.cpp
 //  hello-world
 //
 //  Created by Richard Derryberry on 11/29/22.
 //
 
+#include <stdio.h>
 #include <array>
 #include <iostream>
 #include <string_view>
@@ -22,10 +23,8 @@ std::tuple<std::size_t, std::common_type_t<T...>> sum(T... args)
     return { sizeof...(T), (args + ...) };
 }
 
-
-int main() {
-    std::cout << "Hello, world!\n\n";
-    
+int run()
+{
     auto [iNumbers, iSum]{ sum(1, 2, 3) };
     std::cout << a::b::c::str << ' ' << iNumbers << ' ' << iSum << '\n';
 
